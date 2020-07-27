@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}
+<div class="container-sm">
+  <h3>Подтверждение оплаты через метод Post</h3>
+  <hr>
+    <div class="col-md-2">
+    <form name="Pay" method="POST" action="https://pay.piastrix.com/ru/pay"
+    accept-charset="UTF-8">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <input type="hidden" name="amount" value="{{ amount }}"/>
+        <input name="amount" value="{{ amount }}"/>
+        <input type="hidden" name="currency" value="{{ currency }}"/>
+        <input type="hidden" name="shop_id" value="{{ shop_id }}"/>
+        <input type="hidden" name="sign" value="{{ sign }}"/>
+        <input type="hidden" name="shop_order_id" value="{{ shop_order_id }}"/>
+        <input type="submit" input type="hidden" name="description" value="Оплатить"/>
+    </form>
+    </div>
+  </div>
+{% endblock %}
+

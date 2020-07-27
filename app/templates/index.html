@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}
+<div class="container-sm">
+  <h3>Форма ввода оплаты согласно тех.заданию</h3>
+  <hr>
+    <div class="col-md-2">
+      {{ wtf.quick_form(form) }}
+    </div>
+  </div>
+{% endblock %}

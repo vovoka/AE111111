@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}
+<div class="container-sm">
+  <h3>Подтверждение оплаты через метод Invoice</h3>
+  <hr>
+    <div class="col-md-2">
+    <form name="Invoice" method="GET" action="https://payeer.com/api/merchant/process.php">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <input name="lang" value="{{ lang }}" /></br>
+        <input name="m_curorderid" value="{{ m_curorderid }}"/></br>
+        <input name="m_historyid" value="{{ m_historyid }}"/></br>
+        <input name="m_historytm" value="{{ m_historytm }}"/></br>
+        <input name="referer" value="{{ referer }}"/></br>
+        <input type="submit"/>
+    </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+{% if title %}{{ title }}{% else %}Take me to Piastrix{% endif %}
+{% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>
+                    {{ message }}
+                </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% block app_content %}
+    {% endblock %}
+{% endblock %}
