@@ -78,9 +78,9 @@ def place_order_via_bill(
     """ Prepare data to send reqeust to url and returns responce(json) """
 
     data = {
-        'payer_currency': int( currency),
+        'payer_currency': int(currency),
         'shop_amount': amount,
-        'shop_currency': current_app.config['SHOP_CURRENCY'],
+        'shop_currency': currency,
         'shop_id': current_app.config['SHOP_ID'],
         'shop_order_id': shop_order_id,
     }
